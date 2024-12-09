@@ -49,3 +49,14 @@ export const expect = function (val) {
     },
   };
 };
+/*-----------------------------------------------------*/
+export const convert = (...dateArr) => {
+  if (dateArr.length === 0) return [];
+  const result = [];
+  for (const [year, month, day] of dateArr) {
+    const formattedDate = new Date(year, month - 1, day).toDateString();
+    result.push(formattedDate);
+  }
+  return result;
+};
+/*-----------------------------------------------------*/
