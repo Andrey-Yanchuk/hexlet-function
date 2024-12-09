@@ -60,3 +60,15 @@ export const convert = (...dateArr) => {
   return result;
 };
 /*-----------------------------------------------------*/
+export const run = (str) => {
+  const takeLast = (str, n) => {
+    if (str.length < n) return null;
+    return str.slice(-n).split("").reverse().join("");
+  };
+  return takeLast(str, 4);
+};
+console.log(run("")); // null
+console.log(run("cb")); // null
+console.log(run("power")); // rewo
+console.log(run("hexlet")); // telx
+/*-----------------------------------------------------*/
