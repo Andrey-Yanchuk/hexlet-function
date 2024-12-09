@@ -1,5 +1,5 @@
 // exported-functions.js
-// import _ from "lodash";
+import _ from "lodash";
 // import example from "./example.json" assert { type: "json" };
 // import { str } from "crc-32";
 /*-----------------------------------------------------*/
@@ -22,3 +22,30 @@ export const sayPrimeOrNot = (num) => {
   }
 };
 /*-----------------------------------------------------*/
+export const average = (...numbers) => {
+  if (numbers.length === 0) return null;
+  let result = 0;
+  result += _.sum(numbers);
+  // for (const num of numbers) {
+  //     result += num;
+  // }
+  return result / numbers.length;
+};
+/*-----------------------------------------------------*/
+// Функция сравнения переданного числа в аргумент функции expect и метода toBe или notToBe
+export const expect = function (val) {
+  return {
+    toBe: function (compareVal) {
+      if (val === compareVal) {
+        return true; // Если значения равны, вернуть true
+      }
+      return { error: "Not Equal" }; // Возвратить объект ошибки
+    },
+    notToBe: function (compareVal) {
+      if (val !== compareVal) {
+        return true; // Если значения не равны, вернуть true
+      }
+      return { error: "Equal" }; // Возвратить объект ошибки
+    },
+  };
+};
