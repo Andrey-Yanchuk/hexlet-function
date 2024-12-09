@@ -4,6 +4,7 @@ import {
   expect,
   average,
   convert,
+  run,
 } from "./exported-functions.js";
 /*-----------------------------------------------------*/
 sayPrimeOrNot(5);
@@ -23,4 +24,9 @@ console.log(expect(5).notToBe(null));
 console.log(convert()); //[]
 console.log(convert([1993, 3, 24])); //[ 'Wed Mar 24 1993'
 console.log(convert([1993, 3, 24], [1997, 8, 12], [2001, 10, 18])); //[ 'Wed Mar 24 1993', 'Tue Aug 12 1997', 'Thu Oct 18 2001' ]
+/*-----------------------------------------------------*/
+console.log(run("")); // null
+console.log(run("cb")); // null
+console.log(run("power")); // rewo
+console.log(run("hexlet")); // telx
 /*-----------------------------------------------------*/
