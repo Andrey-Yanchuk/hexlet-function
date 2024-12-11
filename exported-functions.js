@@ -67,10 +67,6 @@ export const run = (str) => {
   };
   return takeLast(str, 4);
 };
-console.log(run("")); // null
-console.log(run("cb")); // null
-console.log(run("power")); // rewo
-console.log(run("hexlet")); // telx
 /*-----------------------------------------------------*/
 export const takeOldest = (usersList, n = 1) => {
   if (usersList.length === 0) return null;
@@ -86,5 +82,12 @@ export const takeOldest = (usersList, n = 1) => {
 /*-----------------------------------------------------*/
 export const getChildren = (usersList) => {
   return usersList.map(({ children }) => children).flat();
+};
+/*-----------------------------------------------------*/
+export const getGirlFriends = (usersList) => {
+  return usersList
+    .map(({ friends }) => friends)
+    .flat()
+    .filter(({ gender }) => gender === "female");
 };
 /*-----------------------------------------------------*/
