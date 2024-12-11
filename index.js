@@ -7,6 +7,7 @@ import {
   run,
   takeOldest,
   getChildren,
+  getGirlFriends,
 } from "./exported-functions.js";
 /*-----------------------------------------------------*/
 sayPrimeOrNot(5);
@@ -69,5 +70,33 @@ console.log(getChildren(usersList));
 //   { name: 'Aria', birthday: '2012-11-03' },
 //   { name: 'Keit', birthday: '1933-05-14' },
 //   { name: 'Tisha', birthday: '2012-11-03' },
+// ];
+/*-----------------------------------------------------*/
+const friendsUserList = [
+  {
+    name: "Tirion",
+    friends: [
+      { name: "Mira", gender: "female" },
+      { name: "Ramsey", gender: "male" },
+    ],
+  },
+  { name: "Bronn", friends: [] },
+  {
+    name: "Sam",
+    friends: [
+      { name: "Aria", gender: "female" },
+      { name: "Keit", gender: "female" },
+    ],
+  },
+  {
+    name: "Rob",
+    friends: [{ name: "Taywin", gender: "male" }],
+  },
+];
+console.log(getGirlFriends(friendsUserList));
+// [
+//   { name: 'Mira', gender: 'female' },
+//   { name: 'Aria', gender: 'female' },
+//   { name: 'Keit', gender: 'female' },
 // ];
 /*-----------------------------------------------------*/
