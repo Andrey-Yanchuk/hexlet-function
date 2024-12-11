@@ -5,6 +5,7 @@ import {
   average,
   convert,
   run,
+  takeOldest,
 } from "./exported-functions.js";
 /*-----------------------------------------------------*/
 sayPrimeOrNot(5);
@@ -29,4 +30,17 @@ console.log(run("")); // null
 console.log(run("cb")); // null
 console.log(run("power")); // rewo
 console.log(run("hexlet")); // telx
+/*-----------------------------------------------------*/
+const users = [
+  { name: "Tirion", birthday: "Nov 19, 1988" },
+  { name: "Sam", birthday: "Nov 22, 1999" },
+  { name: "Rob", birthday: "Jan 11, 1975" },
+  { name: "Sansa", birthday: "Mar 20, 2001" },
+  { name: "Tisha", birthday: "Feb 27, 1992" },
+  { name: "Chris", birthday: "Dec 25, 1995" },
+];
+const emptyUsers = [];
+console.log(takeOldest(users));
+console.log(takeOldest(users, 2));
+console.log(takeOldest(emptyUsers));
 /*-----------------------------------------------------*/
