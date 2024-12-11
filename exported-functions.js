@@ -84,3 +84,7 @@ export const takeOldest = (usersList, n = 1) => {
   return sortedUsers.slice(0, n);
 };
 /*-----------------------------------------------------*/
+export const getChildren = (usersList) => {
+  return usersList.map(({ children }) => children).flat();
+};
+/*-----------------------------------------------------*/
