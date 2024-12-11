@@ -72,3 +72,15 @@ console.log(run("cb")); // null
 console.log(run("power")); // rewo
 console.log(run("hexlet")); // telx
 /*-----------------------------------------------------*/
+export const takeOldest = (usersList, n = 1) => {
+  if (usersList.length === 0) return null;
+  // return _.sortBy(usersList, (user) => Date.parse(user.birthday)).slice(0, n);
+  const sortedUsers = [...usersList].sort((a, b) => {
+    if (Date.parse(a.birthday) === Date.parse(b.birthday)) {
+      return 0;
+    }
+    return Date.parse(a.birthday) > Date.parse(b.birthday) ? 1 : -1;
+  });
+  return sortedUsers.slice(0, n);
+};
+/*-----------------------------------------------------*/
