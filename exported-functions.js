@@ -91,3 +91,11 @@ export const getGirlFriends = (usersList) => {
     .filter(({ gender }) => gender === "female");
 };
 /*-----------------------------------------------------*/
+export const groupBy = (collection, nameProperty) => {
+  return collection.reduce((acc, item) => {
+    if (!(acc[item[nameProperty]])) acc[item[nameProperty]] = [];
+    acc[item[nameProperty]].push(item);
+    return acc;
+  }, {})
+};
+/*-----------------------------------------------------*/
