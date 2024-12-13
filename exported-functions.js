@@ -93,9 +93,24 @@ export const getGirlFriends = (usersList) => {
 /*-----------------------------------------------------*/
 export const groupBy = (collection, nameProperty) => {
   return collection.reduce((acc, item) => {
-    if (!(acc[item[nameProperty]])) acc[item[nameProperty]] = [];
+    if (!acc[item[nameProperty]]) acc[item[nameProperty]] = [];
     acc[item[nameProperty]].push(item);
     return acc;
-  }, {})
+  }, {});
 };
+/*-----------------------------------------------------*/
+export const getFreeDomainsCount = (emails) => {
+  return emails
+    .map((email) => {
+      const [, domain] = email.split("@");
+      return domain;
+    })
+    .filter((domain) => freeEmailDomains.includes(domain))
+    .reduce((acc, domain) => {
+      if (!acc[domain]) acc[domain] = 0;
+      acc[domain] += 1;
+      return acc;
+    }, {});
+};
+const freeEmailDomains = ["gmail.com", "yandex.ru", "hotmail.com"];
 /*-----------------------------------------------------*/
