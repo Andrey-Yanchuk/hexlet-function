@@ -8,6 +8,8 @@ import {
   takeOldest,
   getChildren,
   getGirlFriends,
+  groupBy,
+  getFreeDomainsCount,
 } from "./exported-functions.js";
 /*-----------------------------------------------------*/
 sayPrimeOrNot(5);
@@ -101,11 +103,29 @@ console.log(getGirlFriends(friendsUserList));
 // ];
 /*-----------------------------------------------------*/
 const students = [
-  { name: 'Tirion', class: 'B', mark: 3 },
-  { name: 'Keit', class: 'A', mark: 3 },
-  { name: 'Ramsey', class: 'A', mark: 4 },
+  { name: "Tirion", class: "B", mark: 3 },
+  { name: "Keit", class: "A", mark: 3 },
+  { name: "Ramsey", class: "A", mark: 4 },
 ];
-console.log(groupBy([], ''));
-console.log(groupBy(students, 'mark'));
-console.log(groupBy(students, 'class'));
+console.log(groupBy([], ""));
+console.log(groupBy(students, "mark"));
+console.log(groupBy(students, "class"));
+/*-----------------------------------------------------*/
+const emails = [
+  "info@gmail.com",
+  "info@yandex.ru",
+  "info@hotmail.com",
+  "mk@host.com",
+  "support@hexlet.io",
+  "key@yandex.ru",
+  "sergey@gmail.com",
+  "vovan@gmail.com",
+  "vovan@hotmail.com",
+];
+console.log(getFreeDomainsCount(emails));
+// {
+//   'gmail.com': 3,
+//   'yandex.ru': 2,
+//   'hotmail.com': 2,
+// };
 /*-----------------------------------------------------*/
