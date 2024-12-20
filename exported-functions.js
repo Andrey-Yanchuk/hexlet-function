@@ -114,3 +114,12 @@ export const getFreeDomainsCount = (emails) => {
 };
 const freeEmailDomains = ["gmail.com", "yandex.ru", "hotmail.com"];
 /*-----------------------------------------------------*/
+export const enlargeArrayImage = (twoDimensionalArr) => {
+  return twoDimensionalArr
+    .map((row) => [
+      row.map((cell) => cell + cell),
+      row.map((cell) => cell + cell),
+    ])
+    .flat();
+};
+/*-----------------------------------------------------*/
